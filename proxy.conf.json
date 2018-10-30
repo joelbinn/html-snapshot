@@ -1,0 +1,10 @@
+{
+  "/convert-html-to-pdf": {
+    "target": "http://localhost:8080",
+    "secure": false
+  },
+  "/pdf-document/*": {
+    "target": "http://localhost:8080",
+    "secure": false
+  }
+}

@@ -1,16 +1,26 @@
+import { HttpClientModule } from "@angular/common/http";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {
+  AppComponent,
+  MyComponent
+} from './app.component';
+import { HtmlExtractionService } from "./html-extraction.service";
+import { MyStoreService } from "./my-store.service";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MyComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MyStoreService, HtmlExtractionService],
+  bootstrap: [AppComponent],
+  entryComponents: [MyComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

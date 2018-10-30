@@ -10,6 +10,8 @@
 
 # IDEs and editors
 /.idea
+*.iml
+*.ipr
 .project
 .classpath
 .c9/
@@ -33,6 +35,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/pdfdocs
 
 # System Files
 .DS_Store
