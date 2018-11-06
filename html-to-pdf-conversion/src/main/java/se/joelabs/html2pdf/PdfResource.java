@@ -42,6 +42,32 @@ public class PdfResource {
       "      tr {" +
       "        border-bottom: 1px solid #ddd;" +
       "      }" +
+      "      dt {" +
+      "        font-weight: bold;" +
+      "        margin-left: 0;" +
+      "      }" +
+      "      dd {" +
+      "        margin-left: 0;" +
+      "      }" +
+      "      .container-fluid {\n" +
+      "        margin-right: auto;\n" +
+      "        margin-left: auto;\n" +
+      "        padding-left: 15px;\n" +
+      "        padding-right: 15px;\n" +
+      "      }" +
+      "      .row {\n" +
+      "        margin-left: -15px;\n" +
+      "        margin-right: -15px;\n" +
+      "      }"+
+      "      .col-sm-6 {" +
+      "        width: 50%;"+
+      "        float: left;"+
+      "      }" +
+      "      .printable-list-item {" +
+      "         font-size: small; " +
+      "         margin-bottom: 2rem; " +
+      "         page-break-inside: avoid;" +
+      "      }"+
       "      table {" +
       "        border-collapse: collapse;" +
       "        border: 1px solid;" +
@@ -58,7 +84,7 @@ public class PdfResource {
       "    </style>" +
       "  </head>" +
       "  <body>" +
-      "    <img src=\"html-to-pdf-conversion/src/main/resources/logo_inera.png\" height=\"10%\" width=\"10%\" style:\"position: absolute; right: 0;\">" +
+      "    <!--img src=\"html-to-pdf-conversion/src/main/resources/logo_inera.png\" height=\"10%\" width=\"10%\" style:\"position: absolute; right: 0;\"-->" +
       html +
       "  </body>" +
       "</html>";
@@ -80,6 +106,7 @@ public class PdfResource {
       ConverterProperties properties = new ConverterProperties();
       MediaDeviceDescription mediaDeviceDescription = new MediaDeviceDescription(MediaType.PRINT);
       properties.setMediaDeviceDescription(mediaDeviceDescription);
+      System.out.println("HTML page\n"+htmlPage);
       HtmlConverter.convertToPdf(htmlPage, fos, properties);
     }
   }
